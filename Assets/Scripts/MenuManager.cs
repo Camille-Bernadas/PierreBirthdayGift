@@ -5,10 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public void LoadGame(){
+    public void LoadGame()
+    {
         SceneManager.LoadScene("GameScene");
     }
-    public void LoadHighScore(){
+    public void LoadShop()
+    {
+        SceneManager.LoadScene("ShopScene");
+    }
+    public void LoadHighScore()
+    {
         SceneManager.LoadScene("HighScoreScene");
     }
 }
