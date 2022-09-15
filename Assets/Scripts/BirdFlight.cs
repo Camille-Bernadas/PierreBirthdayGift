@@ -9,6 +9,7 @@ public class BirdFlight : MonoBehaviour
     public float velocity = 1f;
     public bool isAlive = true;
     private Rigidbody2D rb;
+    public ParticleSystem particles;
     void Start(){
         rb = GetComponent<Rigidbody2D>();
     }
@@ -16,6 +17,8 @@ public class BirdFlight : MonoBehaviour
 
     public void Flap(InputAction.CallbackContext ctx){
         if(ctx.performed && isAlive){
+            particles.Stop();
+            particles.Play();
             rb.velocity = Vector2.up * velocity;
         }
     }

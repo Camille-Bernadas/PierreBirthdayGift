@@ -11,7 +11,7 @@ public class ObstacleSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        timer = maxTime + 10f;
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class ObstacleSpawner : MonoBehaviour
         if(timer > maxTime){
             GameObject spawnedObstacle = Instantiate(obstacle);
             spawnedObstacle.transform.position = transform.position + new Vector3(0f, Random.Range(-height, height), 0f);
-            Destroy(spawnedObstacle, 5f);
+            Destroy(spawnedObstacle, 10f);
             timer = 0f;
         }
         timer += Time.deltaTime;
